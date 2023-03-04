@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Chirp extends Model
 {
     use HasFactory;
+    //protege para inserção de dados habilita a atribuição em massa
+    protected $fillable = [
+        'message',
+    ];
 }
