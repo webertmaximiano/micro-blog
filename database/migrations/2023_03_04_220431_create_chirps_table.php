@@ -10,9 +10,11 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
+    {   //cria a tabela no banco
         Schema::create('chirps', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete(); //delete em cascata 
+            $table->string('message');
             $table->timestamps();
         });
     }
