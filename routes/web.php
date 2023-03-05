@@ -25,7 +25,8 @@ Route::get('/dashboard', function () {
 
  
 Route::resource('chirps', ChirpController::class)
-    ->only(['index', 'store'])
+//    ->only(['index', 'store']) adicionamos novas rotas abaixo
+    ->only(['index', 'store', 'edit', 'update'])
     ->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
